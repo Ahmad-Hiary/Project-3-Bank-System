@@ -30,7 +30,7 @@ string ReadString(string Messege)
 {
     cout << Messege;
     string x;
-    getline(cin, x);
+    getline(cin >> ws, x);
 
     return x;
 }
@@ -244,7 +244,7 @@ void DeleteClientFromFile(string AccountNumber, vector <strClientData>& vClients
 
     if (FindClientByAccountNumber(AccountNumber, vClients, Client))
     {
-        _PrintHeaderInOrder(enOpsions::Delete);
+        
 
         _PrintClientCard(Client);
 
@@ -293,7 +293,7 @@ bool UpdateClient(string AccountNumber, vector <strClientData>& vClients)
 
     if (FindClientByAccountNumber(AccountNumber, vClients, Client))
     {
-        _PrintHeaderInOrder(enOpsions::Update);
+   
 
         _PrintClientCard(Client);
 
@@ -464,6 +464,8 @@ void ActivateTheOption(enOpsions Chosen, vector <strClientData>& vClients)
     {
         system("cls");
 
+        _PrintHeaderInOrder(enOpsions::Delete);
+
         string AccountNumber = ReadString("Enter account number to update : ");
         DeleteClientFromFile(AccountNumber, vClients);
 
@@ -476,6 +478,7 @@ void ActivateTheOption(enOpsions Chosen, vector <strClientData>& vClients)
     {
         system("cls");
 
+        _PrintHeaderInOrder(enOpsions::Update);
 
         string AccountNumber = ReadString("Enter account number to update : ");
         UpdateClient(AccountNumber, vClients);
@@ -488,6 +491,8 @@ void ActivateTheOption(enOpsions Chosen, vector <strClientData>& vClients)
     case Find:
     {
         system("cls");
+
+        _PrintHeaderInOrder(enOpsions::Find);
 
         string AccountNumber = ReadString("Enter account number to find : ");
         strClientData Client;
@@ -556,5 +561,3 @@ int main()
 
     return 0;
 }
-
-
