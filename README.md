@@ -1,4 +1,4 @@
-# Project-3-Bank-System-My-Solution
+# Project-3-Bank-System
 This is project 3 at course 7 from road map with Programming Advices .
 
 
